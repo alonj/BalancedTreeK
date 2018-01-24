@@ -61,43 +61,6 @@ private:
     string value;
 };
 
-/*class MyKey :public Key
-{
-public:
-    MyKey(unsigned short k) : key(k) {}
-    MyKey(MyKey const &mk) :key(mk.key) {}
-    ~MyKey() {}
-    MyKey* clone() const
-    {
-        return new MyKey(*this);
-    }
-    unsigned short get_key() { return key; }
-    void set_key(unsigned short k) { key = k; }
-    bool operator<(const Key &rhs) const { return key <((MyKey&)rhs).key; }
-    void print() const { cout << key; }
-private:
-    unsigned short key;
-};
-
-
-class MyValue : public Value
-{
-public:
-    MyValue(unsigned short val) : value(val) {}
-    ~MyValue() {}
-    MyValue(MyValue const &v) { value = v.value; }
-    MyValue* clone() const
-    {
-        return new MyValue(*this);
-    }
-    unsigned short get_value() { return value; }
-    void set_value(unsigned short val) { value = val; }
-    bool operator<(const Value &rhs) const { return value <((MyValue&)rhs).value; }
-    void print() const { cout << value; }
-private:
-    unsigned short value;
-};*/
-
 string generate_random_string(const unsigned len)
 /*returns a random string of length len*/
 {

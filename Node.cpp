@@ -45,24 +45,15 @@ void Node::update_key(){
 }
 
 void Node::update_val(){
-    /*if(direct_children > 1){
-        _value = _children[1]->_value;
-    }
-    for (int i = 0; i < this->direct_children; i++) {
-        if(!_children[0]->sentinel && _value == nullptr){
-            _value = _children[0]->get_value();
-        }
-        if (!_children[i]->sentinel && _value < _children[i]->get_value()){
-            _value = _children[i]->get_value();
-        }
-    }*/
     if(direct_children > 1){
         _value = _children[1]->get_value();
     }
     if(!isLeaf){
         for (int i = 0; i < this->direct_children; i++){
-            if(_children[i]->get_value()!=nullptr && (_value == nullptr || *_value < *_children[i]->get_value())){
-                _value = _children[i]->get_value();
+            if(_children[i]->get_value() != nullptr){
+                if(_value == nullptr || *_value < *_children[i]->get_value()){
+                    _value = _children[i]->get_value();
+                }
             }
         }
     }
